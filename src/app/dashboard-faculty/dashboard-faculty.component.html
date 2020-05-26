@@ -1,0 +1,155 @@
+<style>
+  button{
+    padding-left:5px;
+    background-color:white;
+    outline:none;
+    border:none;
+  }
+</style>
+
+  <div class="container_index">
+    <header class="header_div">
+      <nav class="navbar col-sm-12">
+        <span class="navbar-brand">
+          <a href="../index.html" class="navbar-title"><img src="/../../assets/images/annauniv_red.png" class="logo">&nbsp;&nbsp;AU VISITOR PASS</a>
+        </span>
+        <span class="float-right">
+          <button type="button" id="navbar-toggle-button">
+            <i data-feather="menu"></i>
+          </button>
+          <span id="navbar-links-group">
+          <a href="visitorPass.html" class="navbar-link-right">Visitor Pass</a>
+          <a href="dashBoard.html" class="navbar-link-right">DashBoard</a>
+          <a href="#" class="navbar-link-right">Logout</a>
+          </span>
+        </span>
+      </nav>
+    </header>
+
+    <div class="container-fluid "><br  />
+      <div class="row">
+        <div class="col-sm-2 col-md-2"><input type="date" class="form-control" id="datePicker" value="1980-08-26"></div>
+
+        <div class="col-sm-4">
+   <input type="text" class="form-control" placeholder="Search...">
+        </div>
+
+        <div class="col-sm-2 col-md-2">
+          <select class="form-control">
+            <option>CEG</option>
+            <option>MIT</option>
+          </select>
+        </div>
+
+        <div class="col-sm-2">
+          <select class="form-control">
+            <option selected disabled>Filter</option>
+            <option>Filter option 1</option>
+            <option>Filter option 2</option>
+          </select>
+      </div>
+
+</div>
+<br />
+
+      <table class="table table-bordered dashtable">
+        <thead class="thead-red">
+          <tr>
+            <th scope="col">Visitor ID</th>
+            <th scope="col">Visitor Name</th>
+            <th scope="col">Visitor Designation</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
+            <td>bbb</td>
+            <td>Dean of Mit</td>
+            <td>2020-04-05</td>
+          </tr>
+          <tr>
+            <th scope="row">2<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
+            <td>bbb</td>
+            <td>Dean of Mit</td>
+            <td>2020-04-05</td>
+          </tr>
+          <tr>
+            <th scope="row">3<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
+            <td>bbb</td>
+            <td>Dean of Mit</td>
+            <td>2020-04-05</td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">Page: 1</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+    </div>
+
+
+
+
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="visitorModal" tabindex="-1" role="dialog" aria-labelledby="visitorModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="visitorModalLabel">Visitor Details</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Visitor Id</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">Visitor Name</th>
+            <td>bbb</td>
+          </tr>
+          <tr>
+            <th scope="row">Visitor Designation</th>
+            <td>Dean of MIT</td>
+          </tr>
+          <tr>
+            <th scope="row">Date</th>
+            <td>05/05/2020</td>
+          </tr>
+          <tr>
+            <th scope="row">Purpose</th>
+            <td>The purpose of this visit is to meet the dean regarding ..</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>a@a.com</td>
+          </tr>
+          <tr>
+            <th scope="row">Mobile Number</th>
+            <td>999999999</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">Approve</button>
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
