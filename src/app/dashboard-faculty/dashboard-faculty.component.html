@@ -1,11 +1,3 @@
-<style>
-  button{
-    padding-left:5px;
-    background-color:white;
-    outline:none;
-    border:none;
-  }
-</style>
 
   <div class="container_index">
     <header class="header_div">
@@ -18,8 +10,8 @@
             <i class="material-icons">menu</i>
           </button>
           <span id="navbar-links-group">
-          <a href="visitorPass.html" class="navbar-link-right">Visitor Pass</a>
-          <a href="dashBoard.html" class="navbar-link-right">DashBoard</a>
+          <a href="visitorPass" class="navbar-link-right">Visitor Pass</a>
+          <a href="dashBoard" class="navbar-link-right">DashBoard</a>
           <a href="#" class="navbar-link-right">Logout</a>
           </span>
         </span>
@@ -28,7 +20,7 @@
 
     <div class="container-fluid "><br  />
       <div class="row">
-        <div class="col-sm-2 col-md-2"><input type="date" class="form-control" id="datePicker" value="1980-08-26"></div>
+        <div class="col-sm-3 col-md-3"><input type="date" class="form-control" id="datePicker" value="1980-08-26"></div>
 
         <div class="col-sm-4">
    <input type="text" class="form-control" placeholder="Search...">
@@ -52,36 +44,24 @@
 </div>
 <br />
 
-      <table class="table table-bordered dashtable">
-        <thead class="thead-red">
-          <tr>
-            <th scope="col">Visitor ID</th>
-            <th scope="col">Visitor Name</th>
-            <th scope="col">Visitor Designation</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
-          </tr>
-          <tr>
-            <th scope="row">2<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
-          </tr>
-          <tr>
-            <th scope="row">3<button type="button" data-toggle="modal" data-target="#visitorModal">🔎</button></th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
-          </tr>
-        </tbody>
-      </table>
+<table class="table table-bordered dashtable">
+  <thead class="thead-red">
+    <tr>
+      <th scope="col">Visit ID</th>
+      <th scope="col">Visitor Name</th>
+      <th scope="col">Visitor Org, Designation</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let visit of adminVisits; let i = index" data-toggle="modal" data-target="#visitorModal" (click)="showVisitorModal(i)">
+      <th scope="row">{{visit.visit_id}}</th>
+      <td>{{visit.visitor_name}}</td>
+      <td>{{visit.visitor_organization}},{{visit.visitor_designation}}</td>
+      <td>{{visit.visit_date}}</td>
+    </tr>
+  </tbody>
+</table>
       <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -113,32 +93,33 @@
       <table class="table table-bordered">
         <tbody>
           <tr>
-            <th scope="row">Visitor Id</th>
-            <td>1</td>
+            <th scope="row">Visit Id</th>
+            <td>{{selectedVisit.visit_id}}</td>
           </tr>
           <tr>
             <th scope="row">Visitor Name</th>
-            <td>bbb</td>
+            <td>{{selectedVisit.visitor_name}}</td>
           </tr>
           <tr>
-            <th scope="row">Visitor Designation</th>
-            <td>Dean of MIT</td>
+            <th scope="row">Visitor Organization, Designation</th>
+            <td>{{selectedVisit.visitor_organization}} , {{selectedVisit.visitor_designation}}</td>
           </tr>
           <tr>
             <th scope="row">Date</th>
-            <td>05/05/2020</td>
+            <td>{{selectedVisit.visit_date}}</td>
           </tr>
           <tr>
             <th scope="row">Purpose</th>
-            <td>The purpose of this visit is to meet the dean regarding ..</td>
+            <td>{{selectedVisit.purpose}}</td>
           </tr>
+
           <tr>
             <th scope="row">Email</th>
-            <td>a@a.com</td>
+            <td>{{selectedVisit.visitor_email}}</td>
           </tr>
           <tr>
             <th scope="row">Mobile Number</th>
-            <td>999999999</td>
+            <td>{{selectedVisit.visitor_mobileno}}</td>
           </tr>
 
         </tbody>

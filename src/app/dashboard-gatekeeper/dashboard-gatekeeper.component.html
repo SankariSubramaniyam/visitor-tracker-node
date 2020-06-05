@@ -1,13 +1,5 @@
-<style>
-  button{
-    padding-left:5px;
-    background-color:white;
-    outline:none;
-    border:none;
-  }
-</style>
-
   <div class="container_index">
+    <div class="no-print">
     <header class="header_div">
       <nav class="navbar col-sm-12">
         <span class="navbar-brand">
@@ -18,8 +10,8 @@
             <i class="material-icons">menu</i>
           </button>
           <span id="navbar-links-group">
-          <a href="visitorPass.html" class="navbar-link-right">Visitor Pass</a>
-          <a href="dashBoard.html" class="navbar-link-right">DashBoard</a>
+          <a href="visitorPass" class="navbar-link-right">Visitor Pass</a>
+          <a href="dashBoard" class="navbar-link-right">DashBoard</a>
           <a href="#" class="navbar-link-right">Logout</a>
           </span>
         </span>
@@ -28,7 +20,7 @@
 
     <div class="container-fluid "><br  />
       <div class="row">
-        <div class="col-sm-2 col-md-2"><input type="date" class="form-control" id="datePicker" value="1980-08-26"></div>
+        <div class="col-sm-3 col-md-3"><input type="date" class="form-control" id="datePicker" value="1980-08-26"></div>
 
         <div class="col-sm-2 col-md-2">
           <select class="form-control">
@@ -43,30 +35,21 @@
       <table class="table table-bordered">
         <thead class="thead-red">
           <tr>
-            <th scope="col">Visitor ID</th>
-            <th scope="col">Visitor Name</th>
-            <th scope="col">Visitor Designation</th>
-            <th scope="col">Date</th>
+            <th scope="col">Visit ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Organization, Designation</th>
+            <th scope="col">Place/Person of Visit</th>
+            <th scope="col">Options</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>bbb</td>
-            <td>Dean of Mit</td>
-            <td>2020-04-05</td>
+
+          <tr *ngFor="let visit of gateVisits; let i = index">
+            <th scope="row">{{visit.visit_id}}</th>
+            <td>{{visit.visitor_name}}</td>
+            <td>{{visit.visitor_organization}},{{visit.visitor_designation}}</td>
+            <td>{{visit.place_person_of_visit}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="printVisitorModal(i)" onclick="window.print();">Generate Pass</button></td>
           </tr>
         </tbody>
       </table>
@@ -78,4 +61,44 @@
   </ul>
 </nav>
     </div>
+  </div>
+
+    <div class="pass-print" >
+      <span class="navbar-title" ><img src="/../../assets/images/annauniv_red.png" class="logo">&nbsp;&nbsp;AU VISITOR PASS</span>
+      <hr />
+      <br />
+      <h1 style="text-align:center;">VISITOR DETAILS</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:35%;visibility:hidden;font-size:1px;">heading</th>
+            <th scope="col" style="width:65%;visibility:hidden;font-size:1px;" >details</th>
+          </tr>
+        </thead>
+        <tbody style="font-size:25px;text-align:left">
+          <tr>
+            <th scope="row">Visitor Name</th>
+            <td>{{selectedVisit.visitor_name}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Visitor Organization</th>
+            <td>{{selectedVisit.visitor_organization}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Visitor Designation</th>
+            <td>{{selectedVisit.visitor_designation}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date</th>
+            <td>{{selectedVisit.visit_date}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Place or Person of Visit</th>
+            <td>{{selectedVisit.place_person_of_visit }}</td>
+          </tr>
+          <tr>
+        </tbody>
+        </table>
+    </div>
+
   </div>
