@@ -8,12 +8,12 @@ import { DashboardFacultyComponent } from './dashboard-faculty/dashboard-faculty
 import { DashboardGatekeeperComponent } from './dashboard-gatekeeper/dashboard-gatekeeper.component';
 
 const routes: Routes = [
-  { path: '', component: IndexComponentComponent },
+  { path: 'index', component: IndexComponentComponent },
  { path: 'visitorPass', component: VisitorpassComponentComponent },
  { path: 'dashBoardAdmin', component: DashboardAdminComponent },
  { path: 'dashBoardFaculty', component: DashboardFacultyComponent },
  { path: 'dashBoardGateKeeper', component: DashboardGatekeeperComponent },
-  { path: '**', component: PageNotFoundComponent },
+ {path:'**',component: IndexComponentComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,31 @@
+button{
+  margin-right:0.3rem;
+  background-color: transparent;
+  border: none;
+    outline:none;
+}
+mat-icon{
+  font-size: 1.25rem;
+  text-align: center;
+}
+button.end-node{
+  font-size: 0.5rem;
+  background-color: darkblue;
+  width:1.125rem;
+  height:1.125rem;
+  margin-right:0.3rem;
+  text-align: center;
+  cursor: pointer;
+}
+mat-tree-node.end-node{
+    cursor: pointer;
+}
+
+button:focus{
+  border: none;
+    outline:none;
+}
+mat-tree-node{
+  height: 1.5rem;
+  min-height: 1.5rem;
+}
