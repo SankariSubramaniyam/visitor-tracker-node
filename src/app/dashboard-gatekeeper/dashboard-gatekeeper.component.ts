@@ -37,4 +37,9 @@ export class DashboardGatekeeperComponent{
     this.selectedVisit = this.gateVisits[index];
   }
 
+  public toggleNavBar = false;
+  toggle() {
+    this.toggleNavBar = !this.toggleNavBar;
+  }
+
 }

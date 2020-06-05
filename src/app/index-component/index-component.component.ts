@@ -12,4 +12,8 @@ export class IndexComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public toggleNavBar = false;
+  toggle() {
+    this.toggleNavBar = !this.toggleNavBar;
+  }
 }

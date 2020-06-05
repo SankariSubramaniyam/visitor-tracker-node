@@ -6,10 +6,10 @@
           <a href="../index.html" class="navbar-title"><img src="/../../assets/images/annauniv_red.png" class="logo">&nbsp;&nbsp;AU VISITOR PASS</a>
         </span>
         <span class="float-right">
-          <button type="button" id="navbar-toggle-button">
+          <button type="button" id="navbar-toggle-button" (click)=toggle()>
             <i class="material-icons">menu</i>
           </button>
-          <span id="navbar-links-group">
+            <span id="navbar-links-group" *ngIf = "toggleNavBar">
           <a href="visitorPass" class="navbar-link-right">Visitor Pass</a>
           <a href="dashBoard" class="navbar-link-right">DashBoard</a>
           <a href="#" class="navbar-link-right">Logout</a>

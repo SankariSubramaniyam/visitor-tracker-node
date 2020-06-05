@@ -12,26 +12,31 @@ export class FileFlatNode {
       public expandable: boolean, public filename: string, public level: number, public type: any) {}
 }
 const TREE_DATA = JSON.stringify({
-   CEG: {
-      "OFFICE OF VICE CHANCELLOR": {
-         src: {
-            compiler: 'ts',
-            core: 'ts'
-         }
+   
+      "OFFICE OF THE VICE-CHANCELLOR": {
+      "Vice-Chancellor": "ts",
+      "PS to VC": "ts",
+      "Steno to VC": "ts",
+      "VC’s Office": "ts"
       },
-      "FACULTY OF CIVIL ENGINEERING": {
-         src: {
-            button: 'ts',
-            checkbox: 'ts',
-            input: 'ts'
-         }
+      "OFFICE  OF THE REGISTRAR": {
+      "Registrar": "ts",
+      "PA to Registrar": "ts"
+      },
+      "OFFICERS OF THE CONTROLLER OF EXAMINATIONS (AFF. COLLEGES)": {
+      "COE": "ts",
+      "ACOE – I": "ts",
+      "ACOE – II": "ts",
+      "ACOE (Zones)": "ts",
+      "Deputy Controller, Distance Education": "ts"
+      },
+      "OFFICERS OF THE ADDITIONAL CONTROLLER OF EXAMINATIONS (UNIV. DEPTS)": {
+      "Addl. Controller (CEG)": "ts",
+      "Deputy Controller (ACT)": "ts",
+      "Deputy Controller (SAP)": "ts",
+      "Deputy Controller (MIT)": "ts"
       }
-   },
-   MIT: {
-     ACOE:{
-       director: "Mr.Sanjeevi"
-     }
-   }
+            
 });
 @Injectable()
 export class FileDatabase {
@@ -65,14 +70,14 @@ export class FileDatabase {
 @Component({
   selector: 'app-visitee-hierarchy',
   templateUrl: './visitee-hierarchy.component.html',
-  styleUrls: ['./visitee-hierarchy.component.css'],
+  styleUrls: ['./visitee-hierarchy.component.css','../visitorpass-component/visitorpass-component.component.css'],
   providers: [FileDatabase]
 })
 export class VisiteeHierarchyComponent {
 
   treeControl: FlatTreeControl<FileFlatNode>;
   treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
-  dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+  dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;  
   constructor(database: FileDatabase) {
      this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
      this._isExpandable, this._getChildren);

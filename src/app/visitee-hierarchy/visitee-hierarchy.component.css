@@ -20,12 +20,3 @@ button.end-node{
 mat-tree-node.end-node{
     cursor: pointer;
 }
-
-button:focus{
-  border: none;
-    outline:none;
-}
-mat-tree-node{
-  height: 1.5rem;
-  min-height: 1.5rem;
-}

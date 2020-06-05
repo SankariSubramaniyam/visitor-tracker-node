@@ -37,4 +37,9 @@ export class DashboardFacultyComponent {
   showVisitorModal(index) : void{
     this.selectedVisit = this.adminVisits[index];
   }
+
+  public toggleNavBar = false;
+  toggle() {
+    this.toggleNavBar = !this.toggleNavBar;
+  }
 }
