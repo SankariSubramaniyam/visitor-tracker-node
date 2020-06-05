@@ -48,6 +48,7 @@ export class VisitorpassComponentComponent implements OnInit {
       this.wpmap.set(endpoint.workplace_division,wmap);
     }
     console.log("Output:");
+    console.log(JSON.stringify(this.wpmap));
     console.log(JSON.stringify(Array.from(this.wpmap)));
     console.log(JSON.stringify(Array.from(JSON.stringify(this.wpmap.entries()))));
   }
