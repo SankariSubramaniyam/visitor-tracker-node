@@ -1,5 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+//I dont where the following fonts are used in webpage so included it as such dhrisha
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
